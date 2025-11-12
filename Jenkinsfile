@@ -34,7 +34,6 @@ pipeline {
                                 image 'node:18-alpine'
                                 reuseNode true
                             }
-                        }
                     }
                     steps {
                         sh '''
@@ -47,7 +46,10 @@ pipeline {
                             junit 'test-results/junit.xml'
                         }
                     }
-
+                
+                }
+                    
+                
                 stage('E2E') {
                     agent {
                         docker {
